@@ -1,10 +1,10 @@
 import { Path, UseFormRegister } from "react-hook-form";
 
 interface IFormValues{
-  "First Name": string,
-  "Last Name": string,
-  "Address": string,
-  "Age": number
+  firstName: string,
+  lastName: string,
+  email: string,
+  password: string
 }
 
 type InputProps = {

@@ -2,8 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   max-width: 800px;
+  height: 300px;
   background-color: #bb7e5d;
 }
 
