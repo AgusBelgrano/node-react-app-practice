@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 800px;
+  background-color: #bb7e5d;
+}
+
+/* 
+background-color: #0892a5;
+background-color: #06908f;
+background-color: #0ca4a5;
+background-color: #dbb68f; */
