@@ -17,13 +17,11 @@ const Register = () => {
     handleSubmit,
   } = useForm<IFormValues>();
 
-  const {getAll, createUser} = ApiService()
   
-  //Alerta que marca los datos ingresados
   const onSubmit: SubmitHandler<IFormValues> = data =>{
-    // alert(JSON.stringify(data))
     createUser(data)
   }
+  const {getAll, createUser} = ApiService()
   
   return(
     <>
@@ -32,9 +30,11 @@ const Register = () => {
         <Input label="lastName" register={register} required/>
         <Input label="email" register={register} required/>
         <Input label="password" register={register} required/>
-        <input type="submit" />
       </form>
-      <button onClick={getAll}> Get all </button>
+      <div className="buttonsContainer">
+        <input className="inputButton" type="submit" />
+        <button className="inputButton" onClick={getAll}> Get all </button>
+      </div>
     </>
   )
 };
