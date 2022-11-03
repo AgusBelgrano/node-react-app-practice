@@ -1,10 +1,16 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import Input from "../input/Input"
 import "../styles/Register.css"
 import "../styles/Input.css"
-import ApiService from "../services/api.service"
+import Input from "../input/Index";
+import ApiService from "../../services/api.service"
 import { useEffect } from "react";
-import { User } from "../interfaces/user.interface";
+import { User } from "../../interfaces/user.interface";
+export interface IFormValues{
+  firstName: string,
+  lastName: string,
+  email: string,
+  password: string
+}
 
 const Register = () => {
   const {
@@ -25,10 +31,12 @@ const Register = () => {
   return (
     <>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <Input label="firstName" register={register} required />
-        <Input label="lastName" register={register} required />
-        <Input label="email" register={register} required />
-        <Input label="password" register={register} required />
+        <Input label="firstName" register={register} required/>
+        <Input label="lastName" register={register} required/>
+        <Input label="email" register={register} required/>
+        <Input label="password" register={register} required/>
+      <div className="buttonsContainer">
+      </div>
         <button className="inputButton" type="submit">Registrarse</button>
       </form>
     </>

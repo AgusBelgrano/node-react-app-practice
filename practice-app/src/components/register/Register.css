@@ -24,10 +24,24 @@
   color: #dbb68f;
 }
 
+.form Input:focus {
+  outline: none;
+}
+
 .buttonsContainer {
   margin: 20px;
 }
-
+.buttonsContainer input {
+  width: 300px;
+  max-width: 80%;
+  height: 40px;
+  margin: 5px;
+  border: 2px solid #dbb68f;
+  border-radius: 20px;
+  background-color: #06908f;
+  font-size: 17px;
+  color: black;
+}
 .inputButton {
   width: 300px;
   max-width: 80%;
@@ -35,11 +49,15 @@
   margin: 5px;
   border: 2px solid #dbb68f;
   border-radius: 20px;
-  background-color: #0892a5;
+  background-color: #06908f;
   font-size: 17px;
   color: black;
 }
 
+.inputButton:active {
+  transform: scale(0.98);
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
 /* 
 background-color: #0892a5;
 background-color: #06908f;

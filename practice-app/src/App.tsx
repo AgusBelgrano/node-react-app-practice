@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Register from './register/Register';
+import Register from './components/register/Index';
 
 function App() {
   return (
