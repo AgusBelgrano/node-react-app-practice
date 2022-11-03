@@ -30,11 +30,11 @@ const Register = () => {
         <Input label="lastName" register={register} required/>
         <Input label="email" register={register} required/>
         <Input label="password" register={register} required/>
-      </form>
       <div className="buttonsContainer">
         <input className="inputButton" type="submit" />
         <button className="inputButton" onClick={getAll}> Get all </button>
       </div>
+      </form>
     </>
   )
 };
