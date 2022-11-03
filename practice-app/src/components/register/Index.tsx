@@ -1,8 +1,8 @@
 import {  useForm, SubmitHandler} from "react-hook-form";
-import Input from "../input/Input"
-import "../styles/Register.css"
-import "../styles/Input.css"
-import ApiService from "../services/api.service"
+import Input from "../input/Index"
+import "./Register.css"
+import "../input/Input.css"
+import ApiService from "../../services/api.service"
 
 export interface IFormValues{
   firstName: string,

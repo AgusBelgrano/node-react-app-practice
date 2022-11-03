@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IFormValues } from "../register/Register";
+import { IFormValues } from "../components/register/Index";
 
 const ApiService=() =>{
   const createUser = (data:IFormValues) =>{
