@@ -4,7 +4,8 @@ const userList = [];
 let nextId = 0;
 
 const getAll = () => {
-    return userList;
+    let content = fs.readFileSync('users.json', 'utf-8');
+    return content;
 }
 
 const getOne = (id) => {
@@ -13,44 +14,38 @@ const getOne = (id) => {
 
 const create = (payload) => {
     nextId++;
-    const { name, surname, email, username, password } = payload;
+    const { firstName, lastName, email, password } = payload;
     const user = {
         id: nextId,
-        name,
-        surname,
+        firstName,
+        lastName,
         email,
-        username,
         password
     };
     userList.push(user);
+    fs.writeFileSync('users.json', JSON.stringify(userList));
     return user;
 }
 
 
 const update = (payload) => {
-    const { id, name, surname, email, username, password } = payload;
+    const { id, firstName, lastName, email, password } = payload;
     const user = {
         id,
-        name,
-        surname,
+        firstName,
+        lastName,
         email,
-        username,
         password
     }
-    userList.find(x => {
-        x.id == id;
-        userList.splice((id - 1), 1, user);
-    })
+    const userFind = userList.find(x => x.id === user.id);
+    userList.splice((id - 1), 1, userFind)
     return user;
 }
 
 
-const deleteUser = (payload) => {
-    const { id } = payload;
-    userList.find(x => {
-        x.id === id;
-        delete x;
-    })
+const deleteUser = (id) => {
+    const user = userList.find(x => x.id === id);
+    delete user;
 }
 
 module.exports = {

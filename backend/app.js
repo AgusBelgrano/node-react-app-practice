@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3030;
 app.use(cors());
 app.use(express.json());
 
-app.use("/", require('./src/routes/users'));
+app.use("/users", require('./src/routes/users'));
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
