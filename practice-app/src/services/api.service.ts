@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IFormValues } from "../register/Register";
+import { User } from "../interfaces/user.interface";
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL
@@ -8,11 +8,11 @@ const axiosInstance = axios.create({
 const ApiService = () => {
 
   const getAll = async () => {
-    const res = await axiosInstance.get('/');
+    const res = await axiosInstance.get('/users');
     console.log(res.data);
   }
 
-  const createUser = async (user: IFormValues) => {
+  const createUser = async (user: User) => {
     const res = await axiosInstance.post('/users', user);
     console.log(res.data);
   }
