@@ -1,15 +1,25 @@
 import axios from "axios";
-import { IFormValues } from "../components/register/Index";
+import { User } from "../interfaces/user.interface";
 
-const ApiService=() =>{
-  const createUser = (data:IFormValues) =>{
-    axios.post("http://localhost:3030", JSON.stringify(data)).then(res => console.log(res.data))
+const axiosInstance = axios.create({
+  baseURL: process.env.REACT_APP_BASE_URL
+})
+
+const ApiService = () => {
+
+  const getAll = async () => {
+    const res = await axiosInstance.get('/users');
+    console.log(res.data);
   }
-  const getAll = () =>{
-    axios.get("http://localhost:3030").then(res => console.log(res))
+
+  const createUser = async (user: User) => {
+    const res = await axiosInstance.post('/users', user);
+    console.log(res.data);
   }
-  return{
-    createUser, getAll
+
+  return {
+    createUser, 
+    getAll
   }
 }
 export default ApiService;

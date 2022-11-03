@@ -1,14 +1,14 @@
 const userService = require('./../services/users.service');
 
 const getAll = (req, res) => {
-    res.send(userService.getAll);
+    const file = userService.getAll();
+    if(!file) res.sendStatus(404);
+    res.send(file);
 }
 
 const getOne = (req, res) => {
     const user = userService.getOne(req.params.id);
-    if(!user) {
-        res.sendStatus(400);
-    }
+    if(!user) res.sendStatus(404);
     res.send(user);
 }
 
@@ -23,7 +23,7 @@ const update = (req, res) => {
 }
 
 const deleteUser = (req, res) => {
-    const user = userService.deleteUser(req.body);
+    const user = userService.deleteUser(req.params.id);
     res.send(user);
 }
 
